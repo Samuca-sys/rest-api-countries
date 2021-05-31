@@ -1,0 +1,42 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Nunito Sans', sans-serif;
+}
+
+:root {
+	--darkElements: #2b3945;
+	--darkBackground: #202c37;
+	--lightText: #111517;
+	--lightInput: #858585;
+	--lightBackground: #fafafa;
+	--lightElements: #ffffff;
+}
+
+body {
+	background: var(--lightBackground);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+strong {
+	color: var(--lightText);
+}
+
+input {
+	color: var(--lightInput);
+	background: var(--lightElements);
+}
+
+div,
+header,
+nav {
+	background: var(--lightElements);
+}
