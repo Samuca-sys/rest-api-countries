@@ -1,7 +1,14 @@
-export function CardContainer({ items }) {
+import { Card } from '../Card';
+
+import './styles.css';
+
+export function CardContainer({ countries }) {
 	return (
-		<div>
-			{items && items.map((item, index) => <h1 key={index}>{item.name}</h1>)}
+		<div className='cardContainer'>
+			{countries &&
+				countries.map((country, index) => (
+					<Card key={index} country={country} />
+				))}
 		</div>
 	);
 }

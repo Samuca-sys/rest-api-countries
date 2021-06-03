@@ -1,0 +1,42 @@
+.card--container {
+	background: var(--lightElements);
+	border-radius: 10px;
+	max-width: 264px;
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;
+}
+.card--container img {
+	width: 100%;
+	min-height: 184px;
+	object-fit: cover;
+	border-radius: 10px 10px 0 0;
+}
+
+.card--info {
+	background: var(--lightElements);
+	padding: 2rem;
+	border-radius: 10px;
+}
+
+.card--info h4 {
+	font-size: 1rem;
+	font-weight: 800;
+}
+
+.card--info p {
+	font-size: 0.875rem;
+	font-weight: 600;
+	margin: 0.5rem 0;
+}
+.card--info p:first-of-type {
+	margin-top: 1rem;
+}
+
+.card--info p:last-of-type {
+	margin: 0;
+}
+
+.card--info span {
+	font-weight: 300;
+}

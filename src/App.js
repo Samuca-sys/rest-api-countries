@@ -1,9 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
+
 import { CardContainer } from './components/CardContainer';
 import { Header } from './components/Header';
 import { Search } from './components/Search';
-
-import axios from 'axios';
 
 import './global.css';
 import { api } from './services/api';
@@ -11,26 +10,25 @@ import { api } from './services/api';
 function App() {
 	const [search, setSearch] = useState('');
 	const [countries, setCountries] = useState([]);
-	// const [isLoading, setIsLoading] = useState(true);
 
 	const fetchCountries = useCallback(async () => {
 		let searchTags;
-		const searchTemp = 'Germany, Brazil';
+		const searchTemp =
+			'Germany, United States of America, Brazil, Iceland, Åland, Afghanistan, Albania, Algeria';
 		searchTags = searchTemp.split(', ');
 		const searchResults = [];
 		try {
 			await api.get('all').then((response) => {
-				// searchTags.forEach((tag) => {
-				// 	const result = response.data.filter((country) =>
-				// 		country.name.includes(tag.charAt(0) + tag.slice(1))
-				// 	);
-				// 	result.forEach((country) => {
-				// 		searchResults.push(country);
-				// 	});
-				// });
-				setCountries(response.data);
+				searchTags.forEach((tag) => {
+					const result = response.data.filter((country) =>
+						country.name.includes(tag.charAt(0) + tag.slice(1))
+					);
+					result.forEach((country) => {
+						searchResults.push(country);
+					});
+				});
+				setCountries(searchResults);
 			});
-			// console.log(searchResults);
 		} catch (error) {
 			console.log(error, 'Error getting countries');
 		}
@@ -41,11 +39,11 @@ function App() {
 	}, [search]);
 
 	return (
-		<div className='App'>
+		<>
 			<Header />
 			<Search />
-			<CardContainer items={countries} />
-		</div>
+			<CardContainer countries={countries} />
+		</>
 	);
 }
 
