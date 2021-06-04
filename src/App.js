@@ -1,14 +1,18 @@
 import { useCallback, useEffect, useState } from 'react';
 
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
 import { CardContainer } from './components/CardContainer';
+import { Country } from './pages/Country';
 import { Header } from './components/Header';
 import { Search } from './components/Search';
 
 import './global.css';
-import { api } from './services/api';
 
+import { api } from './services/api';
 function App() {
 	const [search, setSearch] = useState('');
+	const [currentCountry, setCurrentCountry] = useState(null);
 	const [countries, setCountries] = useState([]);
 
 	const fetchCountries = useCallback(async () => {
@@ -40,9 +44,21 @@ function App() {
 
 	return (
 		<>
-			<Header />
-			<Search />
-			<CardContainer countries={countries} />
+			<BrowserRouter>
+				<Switch>
+					<Route path='/' exact={true}>
+						<Header />
+						<Search />
+						<CardContainer
+							countries={countries}
+							setCurrentCountry={setCurrentCountry}
+						/>
+					</Route>
+					<Route path='/details'>
+						{currentCountry && <Country currentCountry={currentCountry} />}
+					</Route>
+				</Switch>
+			</BrowserRouter>
 		</>
 	);
 }
