@@ -1,0 +1,121 @@
+.country--button {
+	margin: 4rem 3rem;
+	border: none;
+	box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.0532439);
+	border-radius: 5px;
+	background: var(--lightElements);
+	width: 136px;
+	height: 3.375rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.country--button span {
+	font-size: 1rem;
+	margin: 0 0.5rem;
+}
+
+.country--container {
+	margin: 0 3rem 4rem 3rem;
+	display: flex;
+	height: 400px;
+}
+
+.country--container img {
+	margin: 0 6rem 2rem 0;
+	width: 100%;
+	max-width: 600px;
+	border-radius: 5px;
+	height: 100%;
+	object-fit: cover;
+}
+
+.country--info {
+	width: 100%;
+	display: flex;
+}
+.country--info div:nth-child(1) {
+	margin: 0 4rem 4rem 0;
+}
+
+.country--container section {
+	display: flex;
+	align-items: center;
+}
+
+.country--container h1 {
+	font-size: 1.75rem;
+	font-weight: 800;
+	margin-bottom: 2rem;
+}
+
+.country--container p {
+	font-size: 0.875rem;
+	font-weight: 600;
+	padding: 0.25rem 0;
+}
+
+.country--container span {
+	font-weight: 300;
+}
+
+.country--borders {
+	display: flex;
+	align-items: center;
+}
+
+.country--borders p {
+	margin-right: 1rem;
+}
+
+.country--borders span {
+	box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.0532439);
+	border-radius: 5px;
+	background: var(--lightElements);
+	margin: 0.5rem 0.5rem 0.25rem 0;
+	padding: 0.25rem 1rem;
+	font-size: 0.875rem;
+}
+
+.country--borderTags {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+@media (max-width: 375px) {
+	.country--button {
+		margin: 1.5rem 0 3rem 1rem;
+	}
+	.country--container {
+		margin: 1rem;
+	}
+	.country--info {
+		flex-direction: column;
+	}
+	.country--info div:nth-child(1) {
+		margin-bottom: 2rem;
+	}
+	.country--borders {
+		margin-top: 2rem;
+	}
+}
+
+@media (max-width: 1024px) {
+	.country--container {
+		flex-direction: column;
+	}
+	.country--container img {
+		min-width: 0;
+	}
+	.country--info {
+		grid-template-columns: 1fr;
+	}
+	.country--borders {
+		margin-bottom: 2rem;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}

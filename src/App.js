@@ -31,6 +31,13 @@ function App() {
 						searchResults.push(country);
 					});
 				});
+				searchResults.forEach(async (country) => {
+					for (let i = 0; i < country.borders.length; i++) {
+						await api.get(`alpha/${country.borders[i]}`).then((response) => {
+							country.borders[i] = response.data.name;
+						});
+					}
+				});
 				setCountries(searchResults);
 			});
 		} catch (error) {
