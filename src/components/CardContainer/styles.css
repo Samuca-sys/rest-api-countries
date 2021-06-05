@@ -1,44 +1,14 @@
-.notFound--container h2 {
-	font-size: 1.5rem;
-}
-
 .cardContainer {
 	margin: 0 auto;
 	display: grid;
 	grid-row-gap: 2rem;
 	width: 264px;
 	grid-template-columns: repeat(1, minmax(240px, 1fr));
-	position: relative;
 }
 
 @media (max-width: 280px) {
 	.cardContainer {
 		width: calc(100% - 2rem);
-	}
-}
-
-@media (min-width: 280px) {
-	.notFound--container h2 {
-		margin-left: 1rem;
-		font-size: 0.75rem;
-	}
-}
-
-@media (min-width: 320px) {
-	.notFound--container h2 {
-		font-size: 0.875rem;
-	}
-}
-
-@media (min-width: 393px) {
-	.notFound--container h2 {
-		margin-left: 3rem;
-	}
-}
-
-@media (min-width: 540px) {
-	.notFound--container h2 {
-		font-size: 1rem;
 	}
 }
 
