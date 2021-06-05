@@ -17,15 +17,19 @@ function App() {
 
 	const fetchCountries = useCallback(async () => {
 		let searchTags;
-		const searchTemp =
-			'Germany, United States of America, Brazil, Iceland, Åland, Afghanistan, Albania, Algeria';
-		searchTags = searchTemp.split(', ');
+		if (search === '') {
+			const searchTemp =
+				'Germany, United States of America, Brazil, Iceland, Åland, Afghanistan, Albania, Algeria';
+			searchTags = searchTemp.split(', ');
+		} else {
+			searchTags = search.split(', ');
+		}
 		const searchResults = [];
 		try {
 			await api.get('all').then((response) => {
 				searchTags.forEach((tag) => {
 					const result = response.data.filter((country) =>
-						country.name.includes(tag.charAt(0) + tag.slice(1))
+						country.name.includes(tag.charAt(0).toUpperCase() + tag.slice(1))
 					);
 					result.forEach((country) => {
 						searchResults.push(country);
@@ -43,11 +47,11 @@ function App() {
 		} catch (error) {
 			console.log(error, 'Error getting countries');
 		}
-	});
+	}, [search]);
 
 	useEffect(() => {
 		fetchCountries();
-	}, [search]);
+	}, [fetchCountries]);
 
 	return (
 		<>
@@ -55,7 +59,11 @@ function App() {
 				<Switch>
 					<Route path='/' exact={true}>
 						<Header />
-						<Search />
+						<Search
+							search={search}
+							setSearch={setSearch}
+							fetchCountries={fetchCountries}
+						/>
 						<CardContainer
 							countries={countries}
 							setCurrentCountry={setCurrentCountry}
