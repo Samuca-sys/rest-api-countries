@@ -1,5 +1,3 @@
-import { Header } from '../../components/Header';
-
 import { CgArrowLeft } from 'react-icons/cg';
 
 import { useHistory } from 'react-router-dom';
@@ -29,7 +27,6 @@ export function Country({ currentCountry }) {
 
 	return (
 		<>
-			<Header />
 			<button className='country--button' onClick={handleClickOnBack}>
 				<CgArrowLeft size={18} />
 				<span>Back</span>

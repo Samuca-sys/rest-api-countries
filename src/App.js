@@ -15,8 +15,6 @@ function App() {
 	const [search, setSearch] = useState('');
 	const [currentCountry, setCurrentCountry] = useState(null);
 	const [countries, setCountries] = useState([]);
-	const [dropdown, setDropdown] = useState(false);
-	const [filter, setFilter] = useState('Filter by Region');
 
 	const fetchCountries = useCallback(async () => {
 		let searchTags;
@@ -57,34 +55,34 @@ function App() {
 	}, [fetchCountries]);
 
 	const fetchCountriesByRegion = async (region) => {
-		await api.get(`/region/${region}`).then((response) => {
-			const searchResults = response.data;
-			searchResults.forEach(async (country) => {
-				for (let i = 0; i < country.borders.length; i++) {
-					await api.get(`alpha/${country.borders[i]}`).then((response) => {
-						country.borders[i] = response.data.name;
-					});
-				}
+		try {
+			await api.get(`/region/${region}`).then((response) => {
+				const searchResults = response.data;
+				searchResults.forEach(async (country) => {
+					for (let i = 0; i < country.borders.length; i++) {
+						await api.get(`alpha/${country.borders[i]}`).then((response) => {
+							country.borders[i] = response.data.name;
+						});
+					}
+				});
+				setCountries(searchResults);
 			});
-			setCountries(searchResults);
-		});
+		} catch (error) {
+			console.log(error, 'Error getting countries by region');
+		}
 	};
 
 	return (
 		<>
+			<Header />
 			<BrowserRouter>
 				<Switch>
 					<Route path='/' exact={true}>
-						<Header />
 						<Search
 							search={search}
 							setSearch={setSearch}
 							fetchCountries={fetchCountries}
 							fetchCountriesByRegion={fetchCountriesByRegion}
-							dropdown={dropdown}
-							setDropdown={setDropdown}
-							filter={filter}
-							setFilter={setFilter}
 						/>
 						<CardContainer
 							countries={countries}

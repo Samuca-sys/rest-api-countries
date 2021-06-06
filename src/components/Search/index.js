@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 import { IoMdSearch } from 'react-icons/io';
 import { FaChevronDown } from 'react-icons/fa';
@@ -9,13 +9,12 @@ export function Search({
 	search,
 	setSearch,
 	fetchCountries,
-	filter,
-	setFilter,
-	dropdown,
-	setDropdown,
 	fetchCountriesByRegion,
 }) {
 	const searchRef = useRef(null);
+
+	const [dropdown, setDropdown] = useState(false);
+	const [filter, setFilter] = useState('Filter by Region');
 
 	const handleDropdown = () => {
 		setDropdown(!dropdown);
