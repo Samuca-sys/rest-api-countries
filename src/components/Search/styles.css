@@ -1,3 +1,7 @@
+.hidden {
+	display: none !important;
+}
+
 .search--container {
 	background: transparent;
 	margin: 4rem 3rem;
@@ -40,15 +44,39 @@
 	justify-content: center;
 	border-radius: 5px;
 	box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.0532439);
+	position: relative;
+	cursor: pointer;
 }
 .search--dropdown,
 .search--dropdown span {
-	color: var(--lightInput);
+	color: var(--lightText);
+}
+
+.search--dropdown span {
+	padding-bottom: 0.5rem;
+}
+
+.search--dropdown span:last-of-type {
+	padding-bottom: 0;
 }
 
 .search--dropdown svg {
 	opacity: 0.65;
 	margin-left: auto;
+}
+
+.search--dropdownMenu {
+	position: absolute;
+	top: 3.5rem;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	background: var(--lightElements);
+	box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.0532439);
+	padding: 1rem;
+	font-size: 1rem;
+	justify-content: center;
+	border-radius: 5px;
 }
 
 @media (max-width: 375px) {

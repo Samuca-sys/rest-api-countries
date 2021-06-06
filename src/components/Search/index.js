@@ -5,12 +5,31 @@ import { FaChevronDown } from 'react-icons/fa';
 
 import './styles.css';
 
-export function Search({ search, setSearch, fetchCountries }) {
+export function Search({
+	search,
+	setSearch,
+	fetchCountries,
+	filter,
+	setFilter,
+	dropdown,
+	setDropdown,
+	fetchCountriesByRegion,
+}) {
 	const searchRef = useRef(null);
 
+	const handleDropdown = () => {
+		setDropdown(!dropdown);
+	};
+
 	const handleSearch = () => {
+		setFilter('Filter by Region');
 		setSearch(searchRef.current.value);
 		fetchCountries();
+	};
+
+	const handleFilter = (region) => {
+		setFilter(region);
+		fetchCountriesByRegion(region);
 	};
 
 	return (
@@ -29,15 +48,15 @@ export function Search({ search, setSearch, fetchCountries }) {
 						value={search}
 					/>
 				</div>
-				<div className='search--dropdown'>
-					<span>Filter by Region</span>
+				<div className='search--dropdown' onClick={handleDropdown}>
+					<span>{filter}</span>
 					<FaChevronDown size={18} />
-					{/* <div className='search--dropdownMenu'>
-						<span>Africa</span>
-						<span>America</span>
-						<span>Europe</span>
-						<span>Oceania</span>
-					</div> */}
+					<div className={`search--dropdownMenu ${dropdown ? '' : 'hidden'}`}>
+						<span onClick={() => handleFilter('Africa')}>Africa</span>
+						<span onClick={() => handleFilter('Americas')}>Americas</span>
+						<span onClick={() => handleFilter('Europe')}>Europe</span>
+						<span onClick={() => handleFilter('Oceania')}>Oceania</span>
+					</div>
 				</div>
 			</div>
 		</>
