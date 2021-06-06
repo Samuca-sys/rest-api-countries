@@ -1,6 +1,6 @@
 .card--container {
-	background: var(--lightElements);
-	border-radius: 10px;
+	background: var(--elements);
+	border-radius: 5px;
 	max-width: 264px;
 	display: flex;
 	flex-direction: column;
@@ -8,13 +8,13 @@
 }
 .card--container img {
 	width: 100%;
-	min-height: 184px;
+	height: 184px;
 	object-fit: cover;
-	border-radius: 10px 10px 0 0;
+	border-radius: 5px 5px 0 0;
 }
 
 .card--info {
-	background: var(--lightElements);
+	background: var(--elements);
 	padding: 2rem;
 	border-radius: 10px;
 }

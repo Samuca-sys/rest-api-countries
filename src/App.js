@@ -7,9 +7,11 @@ import { Country } from './pages/Country';
 import { Header } from './components/Header';
 import { Search } from './components/Search';
 
-import './global.css';
+import { ThemeContextProvider } from './contexts/ThemeContext';
 
 import { api } from './services/api';
+
+import './global.css';
 
 function App() {
 	const [search, setSearch] = useState('');
@@ -74,26 +76,28 @@ function App() {
 
 	return (
 		<>
-			<Header />
-			<BrowserRouter>
-				<Switch>
-					<Route path='/' exact={true}>
-						<Search
-							search={search}
-							setSearch={setSearch}
-							fetchCountries={fetchCountries}
-							fetchCountriesByRegion={fetchCountriesByRegion}
-						/>
-						<CardContainer
-							countries={countries}
-							setCurrentCountry={setCurrentCountry}
-						/>
-					</Route>
-					<Route path='/details'>
-						{currentCountry && <Country currentCountry={currentCountry} />}
-					</Route>
-				</Switch>
-			</BrowserRouter>
+			<ThemeContextProvider>
+				<Header />
+				<BrowserRouter>
+					<Switch>
+						<Route path='/' exact={true}>
+							<Search
+								search={search}
+								setSearch={setSearch}
+								fetchCountries={fetchCountries}
+								fetchCountriesByRegion={fetchCountriesByRegion}
+							/>
+							<CardContainer
+								countries={countries}
+								setCurrentCountry={setCurrentCountry}
+							/>
+						</Route>
+						<Route path='/details'>
+							{currentCountry && <Country currentCountry={currentCountry} />}
+						</Route>
+					</Switch>
+				</BrowserRouter>
+			</ThemeContextProvider>
 		</>
 	);
 }

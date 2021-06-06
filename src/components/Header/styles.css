@@ -2,7 +2,7 @@ header {
 	display: flex;
 	align-items: center;
 	padding: 1.75rem 3rem;
-	background: var(--lightElements);
+	background: var(--elements);
 	margin: 0 auto;
 	width: 100%;
 	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
@@ -19,6 +19,10 @@ header h2 {
 	margin-left: auto;
 }
 
+.header--button svg path {
+	fill: #fff;
+}
+
 header h4 {
 	font-size: 1rem;
 	font-weight: 600;
@@ -32,7 +36,7 @@ header h4 {
 
 @media (min-width: 280px) {
 	header {
-		padding: 2rem 1.5rem;
+		padding: 2rem 1rem;
 	}
 	header h2 {
 		font-size: 0.75rem;

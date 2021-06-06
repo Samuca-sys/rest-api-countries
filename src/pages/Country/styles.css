@@ -3,13 +3,17 @@
 	border: none;
 	box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.0532439);
 	border-radius: 5px;
-	background: var(--lightElements);
+	background: var(--elements);
 	width: 136px;
 	height: 3.375rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
+}
+
+.country--button svg path {
+	fill: var(--text);
 }
 
 .country--button span {
@@ -73,7 +77,7 @@
 .country--borders span {
 	box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.0532439);
 	border-radius: 5px;
-	background: var(--lightElements);
+	background: var(--elements);
 	margin: 0.5rem 0.5rem 0.25rem 0;
 	padding: 0.25rem 1rem;
 	font-size: 0.875rem;

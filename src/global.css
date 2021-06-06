@@ -3,19 +3,25 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Nunito Sans', sans-serif;
+	transition: 0.5s;
 }
 
 :root {
-	--darkElements: #2b3945;
-	--darkBackground: #202c37;
-	--lightText: #111517;
-	--lightInput: #858585;
-	--lightBackground: #fafafa;
-	--lightElements: #ffffff;
+	--text: #111517;
+	--input: #858585;
+	--background: #fafafa;
+	--elements: #ffffff;
+}
+
+.dark-mode:root {
+	--text: #ffffff;
+	--input: #2b3945;
+	--background: #202c37;
+	--elements: #2b3945;
 }
 
 body {
-	background: var(--lightBackground);
+	background: var(--background);
 }
 
 h1,
@@ -27,10 +33,9 @@ h6,
 p,
 span,
 strong {
-	color: var(--lightText);
+	color: var(--text);
 }
 
 input {
-	color: var(--lightInput);
 	border: none;
 }
