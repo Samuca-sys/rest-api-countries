@@ -1,0 +1,28 @@
+.returnToHome--button {
+	margin: 4rem 3rem;
+	border: none;
+	box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.0532439);
+	border-radius: 5px;
+	background: var(--elements);
+	width: 136px;
+	height: 3.375rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.returnToHome--button svg path {
+	fill: var(--text);
+}
+
+.returnToHome--button span {
+	font-size: 1rem;
+	margin: 0 0.5rem;
+}
+
+@media (max-width: 375px) {
+	.returnToHome--button {
+		margin: 1.5rem 0 3rem 1rem;
+	}
+}

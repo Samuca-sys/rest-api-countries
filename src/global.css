@@ -39,3 +39,26 @@ strong {
 input {
 	border: none;
 }
+
+code {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+}
+
+@media (min-width: 280px) {
+	code {
+		font-size: 0.75rem;
+	}
+}
+@media (min-width: 320px) {
+	code {
+		font-size: 0.875rem;
+	}
+}
+@media (min-width: 540px) {
+	code {
+		font-size: 1rem;
+	}
+}

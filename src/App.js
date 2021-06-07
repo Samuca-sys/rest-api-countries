@@ -12,6 +12,7 @@ import { ThemeContextProvider } from './contexts/ThemeContext';
 import { api } from './services/api';
 
 import './global.css';
+import { ReturnToHomeButton } from './components/ReturnToHomeButton';
 
 function App() {
 	const [search, setSearch] = useState('');
@@ -93,7 +94,18 @@ function App() {
 							/>
 						</Route>
 						<Route path='/details'>
-							{currentCountry && <Country currentCountry={currentCountry} />}
+							<ReturnToHomeButton />
+							{currentCountry ? (
+								<Country currentCountry={currentCountry} />
+							) : (
+								<>
+									<code>No country has been selected.</code>
+								</>
+							)}
+						</Route>
+						<Route>
+							<ReturnToHomeButton />
+							<code>404: page not found!</code>
 						</Route>
 					</Switch>
 				</BrowserRouter>
