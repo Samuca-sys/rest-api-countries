@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+<h1 align="center"> Frontend Mentor - REST Countries API with color theme switcher</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h4 align="center">
+  REST Countries API with color theme switcher is a front-end coding challenge that creates a web app mobile first for practicing API.
+</h4>
 
-## Available Scripts
+<div align="center">
 
-In the project directory, you can run:
+![Design preview for the REST Countries API with color theme switcher coding challenge](.github/desktop-preview.jpg)
+  
+</div>
 
-### `yarn start`
+## The challenge
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The challenge from [Frontend Mentor](https://www.frontendmentor.io) was to integrate with the [REST Countries API](https://restcountries.eu) to pull country data and display it like in the designs.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Moreover, users should be able to:
 
-### `yarn test`
+- See all countries from the API on the homepage
+- Search for a country using an `input` field
+- Filter countries by region
+- Click on a country to see more detailed information on a separate page
+- Click through to the border countries on the detail page
+- Toggle the color scheme between light and dark mode 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Design
 
-### `yarn build`
+The web was made full responsive, with a design for each screen.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Desktop
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<div align="center">
+  <img src=".github/desktop-design-home-light.jpg" alt="desktop-design-home-light" width="700">
+</div>
+  
+<div align="center">
+  <img src=".github/desktop-design-detail-dark.jpg" alt="desktop-design-detail-dark" width="700">
+</div>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Mobile
 
-### `yarn eject`
+<p align="center">
+  <img src=".github/mobile-design-home-light.jpg" alt="mobile-design-home-light" width="200">
+</p>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<div align="center">
+  <img src=".github/mobile-design-detail-dark.jpg" alt="mobile-design-detail-dark" width="200">
+</div>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Tecnologies
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+This project from [Frontend Mentor](https://www.frontendmentor.io) was developed using front-end technology and REST Countries API.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- [ReactJS](https://reactjs.org/)
+- [REST Countries API](https://restcountries.eu) 
 
-## Learn More
+## 💻 Getting started
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Requirements
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- You need to install both [Node.js](https://nodejs.org/en/download/) and [Yarn](https://yarnpkg.com/) to run this project.
 
-### Code Splitting
+**Clone the project and access the folder**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+$ git clone https://github.com/Samuca-sys/rest-api-countries.git && cd rest-api-countries
+```
 
-### Analyzing the Bundle Size
+**Follow the steps below**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+# Install the dependencies
+$ yarn
 
-### Making a Progressive Web App
+# Start application
+$ yarn start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The app will be available for access on your browser at `http://localhost:3000`
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📝 License
 
-### Deployment
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Made with 💜 by Samuel Macedo 👋 [Check out my LinkedIn](https://www.linkedin.com/in/samuel-macedo)
