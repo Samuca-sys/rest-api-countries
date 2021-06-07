@@ -1,11 +1,10 @@
-import { useContext } from 'react';
 import { IoMoonOutline } from 'react-icons/io5';
-import { ThemeContext } from '../../contexts/ThemeContext';
+import { useTheme } from '../../contexts/ThemeContext';
 
 import './styles.css';
 
 export function Header() {
-	const { toggleMode } = useContext(ThemeContext);
+	const { toggleMode } = useTheme();
 	return (
 		<header>
 			<h2>Where in the world?</h2>
