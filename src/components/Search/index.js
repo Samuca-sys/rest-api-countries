@@ -53,6 +53,7 @@ export function Search({
 					<div className={`search--dropdownMenu ${dropdown ? '' : 'hidden'}`}>
 						<span onClick={() => handleFilter('Africa')}>Africa</span>
 						<span onClick={() => handleFilter('Americas')}>Americas</span>
+						<span onClick={() => handleFilter('Asia')}>Asia</span>
 						<span onClick={() => handleFilter('Europe')}>Europe</span>
 						<span onClick={() => handleFilter('Oceania')}>Oceania</span>
 					</div>
